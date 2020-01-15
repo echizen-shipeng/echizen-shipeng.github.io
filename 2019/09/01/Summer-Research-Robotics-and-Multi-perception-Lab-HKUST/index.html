@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Shipeng Liu
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+</head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Shipeng Liu
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Shipeng Liu
+        </a>
+    </h1>
+    <h2 class="desc">
+        Life is challenging!
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/Shipeng-Liu" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/%E4%B8%96%E9%B9%8F-%E5%88%98-981586195/" target="_blank" rel="noopener">
+                    LinkedIn
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/RESEARCHS/">
+            RESEARCHS
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        Summer Research, Robotics and Multi-perception Lab, HKUST
+    </h2>
+    <ul class="post-date">
+        <li>
+            2019-09-01
+        </li>
+        <li>
+            ShipengLiu
+        </li>
+    </ul>
+    <div class="post-content">
+        <h5 id="Content-Development-of-Autopilot-Control-Simulator-amp-Improvement-of-control-algorithm"><a href="#Content-Development-of-Autopilot-Control-Simulator-amp-Improvement-of-control-algorithm" class="headerlink" title="Content: Development of Autopilot Control Simulator &amp; Improvement of control algorithm"></a>Content: Development of Autopilot Control Simulator &amp; Improvement of control algorithm</h5><h5 id="Time-Jul-2019-Sept-2019"><a href="#Time-Jul-2019-Sept-2019" class="headerlink" title="Time: Jul. 2019 - Sept. 2019"></a>Time: Jul. 2019 - Sept. 2019</h5><h5 id="Advisor-Prof-Ming-Liu-PhD-of-ETH"><a href="#Advisor-Prof-Ming-Liu-PhD-of-ETH" class="headerlink" title="Advisor: Prof. Ming Liu(PhD of ETH)"></a>Advisor: Prof. Ming Liu(PhD of ETH)</h5><hr>
+<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h3><ul>
+<li>Simulation is a necessary step when we are developing a unmanned vehicle. In Ram Lab of HKUST, I am enrolled in the project in order to develop a simulator for “Kuafu” unmanned vehicle. To be suitable for ubuntu and ROS, we decided to choose Carla simulator. This is our simulator.<br><img src="/images/pasted-0.png" alt="upload successful"></li>
+</ul>
+<h3 id="2-My-contribution"><a href="#2-My-contribution" class="headerlink" title="2.My contribution"></a>2.My contribution</h3><ul>
+<li>Built a dynamic model for our lab’s vehicle and combined it with the Carla vehicle simulator</li>
+<li>Realized the B-spline trajectory setting function and developed a GUI interface for users to design different trajectory for more efficient controller performance testing</li>
+<li>Connected this highly accurate simulator to the controller through ROS and reduced the chattering of sliding mode controller by designing RBF neural network to adjust the switching gain.</li>
+<li>My contribution: red circle<br><img src="/images/pasted-1.png" alt="upload successful"></li>
+</ul>
+<h3 id="3-Effects"><a href="#3-Effects" class="headerlink" title="3.Effects"></a>3.Effects</h3><ul>
+<li>The design of routes based on B-spline<br><img src="/images/pasted-2.png" alt="upload successful"></li>
+<li>An Empty Map for control simulation<br><img src="/images/pasted-3.png" alt="upload successful"></li>
+<li>Plot Interface<br><img src="/images/pasted-4.png" alt="upload successful"></li>
+</ul>
+<h3 id="4-Simulation-of-controllers"><a href="#4-Simulation-of-controllers" class="headerlink" title="4.Simulation of controllers"></a>4.Simulation of controllers</h3><ul>
+<li>MPC controller<br><img src="/images/pasted-5.png" alt="upload successful"></li>
+<li>SMC controller(only lateral)<br><img src="/images/pasted-6.png" alt="upload successful"></li>
+</ul>
+<h3 id="5-End"><a href="#5-End" class="headerlink" title="5.End"></a>5.End</h3><p>I really appreciate this chance and I have learned a lot during the process. I am really interested in it.</p>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Navigation Bar</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ABOUT/">ABOUT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/EVENTS/">EVENTS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PUBLICATIONS/">PUBLICATIONS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RESEARCHS/">RESEARCHS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SELECTED-PROJECTS/">SELECTED  PROJECTS</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/About-me/" rel="tag">About me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activities/" rel="tag">Activities</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Carla/" rel="tag">Carla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Communication/" rel="tag">Communication</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Control/" rel="tag">Control</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/D-H-parameter/" rel="tag">D-H parameter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Embed-system/" rel="tag">Embed system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kinematics/" rel="tag">Kinematics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MCU/" rel="tag">MCU</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile-robot/" rel="tag">Mobile robot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Navigation/" rel="tag">Navigation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROS/" rel="tag">ROS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SLAM/" rel="tag">SLAM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Soft-robot/" rel="tag">Soft robot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unmanned-vehicle/" rel="tag">Unmanned vehicle</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>

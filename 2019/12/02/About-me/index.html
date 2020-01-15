@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Shipeng Liu
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+</head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Shipeng Liu
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Shipeng Liu
+        </a>
+    </h1>
+    <h2 class="desc">
+        Life is challenging!
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/Shipeng-Liu" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/%E4%B8%96%E9%B9%8F-%E5%88%98-981586195/" target="_blank" rel="noopener">
+                    LinkedIn
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/ABOUT/">
+            ABOUT
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        About me
+    </h2>
+    <ul class="post-date">
+        <li>
+            2019-12-02
+        </li>
+        <li>
+            ShipengLiu
+        </li>
+    </ul>
+    <div class="post-content">
+        <p><img src="/images/pasted-25.png" alt="upload successful"></p>
+<h3 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h3><ul>
+<li>Email: <a href="mailto:shipeng_liu@hotmail.com" target="_blank" rel="noopener">shipeng_liu@hotmail.com</a></li>
+<li>Email: <a href="mailto:shipeng.liu123@gmail.com" target="_blank" rel="noopener">shipeng.liu123@gmail.com</a></li>
+<li>Address: 4800 Cao’an RD, Jiading District, Shanghai, 201804, P.R. China</li>
+<li>Phone: +86-15316001597</li>
+</ul>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><ul>
+<li>I am now a senior student at <a href="https://see.tongji.edu.cn/" target="_blank" rel="noopener">College of Electronics and Information Engineering</a> of <a href="https://www.tongji.edu.cn/" target="_blank" rel="noopener">Tongji University</a>, China. I minored in Mathematics and German. And I spent two years in People’s Liberation Army of China.</li>
+</ul>
+<h3 id="Publications"><a href="#Publications" class="headerlink" title="Publications"></a>Publications</h3><ul>
+<li><a href="https://drive.google.com/file/d/1mlnYEnMkyH62lfKYe5dYTZGTEWneFiNN/view?usp=sharing" target="_blank" rel="noopener">Shipeng Liu, Xiaoying Yang, Youling Yu. “Analysis and Implementation of the Control Algorithms of the Smart Car”,Journal of Computing Science and Engineering, 2019, 103-109</a>,2019 International Conference on Artificial Intelligence and Computer Science, ISBN-978-1-60595-615-2,</li>
+<li><a href="https://drive.google.com/file/d/1G2OeogR4sCWvUjWHYZ9i8o2K68LevuOo/view?usp=sharing" target="_blank" rel="noopener">Xiaoying Yang, Shipeng Liu, Linwei Chen, Jing Zhou, Youling Yu. “Analysis and Design of an Effective Energy, Utilizing TEG System”, Journal of Computing Science and Engineering, 2019, 88-96</a>,2019 International Conference on Artificial Intelligence and Computer Science, ISBN-978-1-60595-615-2,</li>
+<li><a href="https://drive.google.com/file/d/1SHh-2DtLvdnIr8q4ZQw1Y8kVNnRx4NbE/view?usp=sharing" target="_blank" rel="noopener">Shipeng Liu, Xiaoying Yang “Establish a propagation model of HF radio off different surfaces”,American undergraduate mathematical contest in modeling </a></li>
+</ul>
+<h3 id="RESEARCH"><a href="#RESEARCH" class="headerlink" title="RESEARCH"></a>RESEARCH</h3><ul>
+<li><a href="../../../../2019/10/23/Research-Assistant-Department-of-Control-Science-Engineering-TJU/">Research Assistant</a>, Department of Control Science &amp; Engineering, TJU</li>
+<li><a href="../../../../2019/09/01/Summer-Research-Robotics-and-Multi-perception-Lab-HKUST/">Summer Research</a>, Robotics and Multi-perception Lab, HKUST</li>
+<li><a href="../../../../2019/04/30/Research-Assistant-Center-of-Digital-Innovation-TJU/">Research Assistant</a>, Center of Digital Innovation, TJU</li>
+<li><a href="../../../../2018/08/30/Project-Leader-NXP-Joint-Automotive-Electronics-Lab-TJU/">Project Leader</a>, NXP Joint Automotive Electronics Lab, TJU</li>
+</ul>
+<h3 id="SELECTED-COURSE-PROJECTS"><a href="#SELECTED-COURSE-PROJECTS" class="headerlink" title="SELECTED COURSE PROJECTS"></a>SELECTED COURSE PROJECTS</h3><ul>
+<li><a href="../../../../2019/12/01/Introduction-to-Robotics-I-Trajectory-control-for-a-robot-manipulator/">Introduction to Robotics I</a>: Trajectory control for a robot manipulator</li>
+<li><a href="../../../../2019/12/01/Introduction-to-Robotics-II-Kinematic-modeling-of-soft-robots/">Introduction to Robotics II</a>: Kinematic modeling of soft robots</li>
+<li><a href="../../../../2019/01/01/Undergraduate-Research-Program-I-Simulation-of-vehicle-to-vehicle-v2v-Communication/">Undergraduate Research Program I</a>: Simulation of vehicle to vehicle (v2v) Communication</li>
+<li><a href="../../../../2019/03/01/Undergraduate-Research-Program-II-Design-of-Vehicle-Data-Acquisition-System/">Undergraduate Research Program II</a>: Design of Vehicle Data Acquisition System</li>
+</ul>
+<h3 id="EXPERIENCES"><a href="#EXPERIENCES" class="headerlink" title="EXPERIENCES"></a>EXPERIENCES</h3><ul>
+<li>Mentor, Campus Workshop of Tencent Cloud Development, Tencent company</li>
+<li>Teaching Assistant, Open Source Hardware and Programming course, TJU</li>
+</ul>
+<h3 id="CONTESTS"><a href="#CONTESTS" class="headerlink" title="CONTESTS"></a>CONTESTS</h3><ul>
+<li>The Second Prize, Innovation and Entrepreneurship Forum, TJU</li>
+<li>First Prize, The 2018 NXP Cup National University Students Intelligent Car Race (Top 2%) </li>
+<li>Third Prize, Shanghai “TI” Cup Electronic Design Competition (Top 20%)</li>
+<li>The Silver Medal, TJ University Internet Plus Innovation and entrepreneurship competition </li>
+<li>Honorable Mention, American undergraduate mathematical contest in modeling (Top 15%) </li>
+<li>Third Prize, National Mathematical Modeling Contest</li>
+</ul>
+<h3 id="HONORS-amp-AWARDS"><a href="#HONORS-amp-AWARDS" class="headerlink" title="HONORS &amp; AWARDS"></a>HONORS &amp; AWARDS</h3><ul>
+<li>The Second-Class Scholarship for Academic Excellence, TJU (Top10%) </li>
+<li>Social Activity Scholarship</li>
+<li>National Encouragement Scholarship (Top 5%)</li>
+<li>The Third-Class Scholarship for Academic Excellence, TJU (Top15%) </li>
+<li>National Special Scholarship for retired college students</li>
+</ul>
+<h3 id="SKILLS"><a href="#SKILLS" class="headerlink" title="SKILLS"></a>SKILLS</h3><ul>
+<li>Experience in ROS, Ubuntu, OpenCV, Carsim, Carla, Omnet++, Altium Designer, Arduino, RBF neural network </li>
+<li>Programming skills in Python, Matlab/Simulink, C, C++, Shell</li>
+<li>Language skills in Chinese, English, German (B1)</li>
+</ul>
+<h3 id="OTHER-ACTIVITIES"><a href="#OTHER-ACTIVITIES" class="headerlink" title="OTHER ACTIVITIES"></a>OTHER ACTIVITIES</h3><ul>
+<li>Vice minister of secretariat in Social management council, TJU </li>
+<li>Volunteer of teaching in the mountain village for one summer </li>
+<li>The First Prize of Table Tennis championship, Shanghai</li>
+<li><a href="../../../..//2017/09/01/People-s-Liberation-Army-Excellent-Soldier/">Excellent Soldier</a> in People’s Liberation Army of China</li>
+</ul>
+<h3 id="MY-COMPLETE-CV"><a href="#MY-COMPLETE-CV" class="headerlink" title="MY COMPLETE CV"></a><a href="https://drive.google.com/file/d/1qcvrra7BXa8uO8rlxASZceRlsgzFizRc/view?usp=sharing" target="_blank" rel="noopener">MY COMPLETE CV</a></h3>
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Navigation Bar</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ABOUT/">ABOUT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/EVENTS/">EVENTS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PUBLICATIONS/">PUBLICATIONS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/RESEARCHS/">RESEARCHS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SELECTED-PROJECTS/">SELECTED  PROJECTS</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/About-me/" rel="tag">About me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activities/" rel="tag">Activities</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Carla/" rel="tag">Carla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Communication/" rel="tag">Communication</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Control/" rel="tag">Control</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/D-H-parameter/" rel="tag">D-H parameter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Embed-system/" rel="tag">Embed system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kinematics/" rel="tag">Kinematics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MCU/" rel="tag">MCU</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile-robot/" rel="tag">Mobile robot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Navigation/" rel="tag">Navigation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROS/" rel="tag">ROS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SLAM/" rel="tag">SLAM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Soft-robot/" rel="tag">Soft robot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unmanned-vehicle/" rel="tag">Unmanned vehicle</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
